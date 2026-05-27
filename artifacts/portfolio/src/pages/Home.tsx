@@ -14,54 +14,60 @@ const works = [
     title: "Context Break Off",
     category: "Urban Machinery",
     year: "2025",
-    desc: "Temporary inflatable urban architecture exploring political rituals, public discourse, and spatial mediation in Gwanghwamun, Seoul.",
+    location: "Gwanghwamun, Seoul",
+    desc: "Political conflict and social fragmentation demand spatial response. An inflatable urban machine intervenes temporarily on Sejong-daero — breaking the one-directional axis of Gwanghwamun Square to create space for dialogue, ritual, and encounter across difference.",
     img: contextBreakOff,
-    keywords: "ritual, protest, membrane structure, urban conflict",
+    keywords: "ekklesia, membrane structure, inflatable vehicle, protest, ritual, urban dialogue",
     aspect: "aspect-[3/4]"
   },
   {
     title: "Floating Ground",
     category: "Middle School",
     year: "2024",
-    desc: "A school envisioned as an open public landscape where students and local residents share circulation, parks, and community spaces.",
+    location: "Bukak-dong, Seoul",
+    desc: "School envisioned not as an enclosed institution but as an open hillside landscape. A floating slab lifts the building, freeing the ground for a public park shared between students and local residents — blurring the boundary between learning and everyday neighborhood life.",
     img: floatingGround,
-    keywords: "floating slab, open school, hillside architecture",
+    keywords: "floating slab, open school, hillside, public circulation, Bukak-dong, community",
     aspect: "aspect-[16/9]"
   },
   {
     title: "Museum is Moving",
     category: "Museum Renovation",
     year: "2024",
-    desc: "A flexible museum transforming architectural archives into spatial experiences through movable walls and multisensory interaction.",
+    location: "Haehwa-dong, Seoul",
+    desc: "Architecture archives resist passive display. This renovation transforms a museum into a Larchiveum — Library, Archive, and Museum fused into one adaptive space — where movable wall units reconfigure the interior between cinema, open library, festival, and exhibition modes.",
     img: museumMoving,
-    keywords: "moving wall systems, larchiveum, adaptive museum",
+    keywords: "larchiveum, movable wall, flexible museum, Marronnier Park, archive, cinematic",
     aspect: "aspect-[4/3]"
   },
   {
     title: "Art Path House",
     category: "Artists' Housing",
     year: "2024",
-    desc: "Collective housing for artists encouraging spontaneous encounters, collaboration, and shared creative life.",
+    location: "Jeongreong-dong, Seoul",
+    desc: "Collective housing conceived around the path as the primary social space. 100 rooms across three module types for artists of diverse disciplines — where spontaneous encounters, shared processes, and the act of selling talent become catalysts for creative life.",
     img: artPathHouse,
-    keywords: "collective living, artistic community, circulation",
+    keywords: "collective living, artist community, path, Jeongreong-dong, interdisciplinary, circulation",
     aspect: "aspect-[3/4]"
   },
   {
     title: "Future Church",
     category: "Religious Park",
     year: "2023",
-    desc: "Transformation of disappearing local churches into open communal sanctuaries preserving memory and social relationships.",
+    location: "Virtual site — where the small church used to be",
+    desc: "As small churches disappear, so do the communities they held. Gabion walls recycle the material and spatial memory of the original church — forming an open sanctuary park that continues to serve the neighborhood as a place of worship, rest, and communal gathering.",
     img: futureChurch,
-    keywords: "gabion wall, memory, adaptive reuse, open sanctuary",
+    keywords: "gabion, adaptive reuse, open sanctuary, memory, community, Bronze Prize",
     aspect: "aspect-[16/9]"
   },
   {
     title: "Simbiont : Live Life",
     category: "Pavilion",
     year: "2025",
-    desc: "A pavilion inspired by ecological symbiosis and bromeliad systems, creating coexistence between humans and nature.",
+    location: "Seoul City Hall Square",
+    desc: "The Bromeliad forms a micro-ecosystem in the water held between its leaves. This pavilion spatializes that system — visitors shift from observers to participants, from consumers to resource providers, inhabiting a cycle of coexistence between human and nature.",
     img: simbiont,
-    keywords: "symbiosis, ecology, pavilion, water cycle",
+    keywords: "symbiosis, bromeliad, micro-ecosystem, water cycle, pavilion, Seoul Square",
     aspect: "aspect-square"
   }
 ];
@@ -205,6 +211,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-between items-start pt-2">
                       <span className="font-sans text-xs uppercase tracking-wider">{work.category}</span>
+                      <span className="font-sans text-[10px] text-muted-foreground">{work.location}</span>
                     </div>
                     <p className="font-sans text-sm text-muted-foreground leading-relaxed mt-4 max-w-sm">
                       {work.desc}
@@ -230,16 +237,27 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-4 gap-12"
           >
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 flex flex-col gap-8">
               <h2 className="text-xs uppercase tracking-[0.3em] text-muted-foreground">About</h2>
+              <div className="font-sans text-xs text-muted-foreground space-y-1 leading-relaxed">
+                <p>Kookmin University</p>
+                <p>Dept. of Architecture</p>
+                <p>Seoul, Korea</p>
+                <p className="pt-3 text-[10px] uppercase tracking-widest">BArch, 4th Year</p>
+              </div>
             </div>
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 space-y-10">
               <p className="font-serif text-2xl md:text-4xl leading-snug tracking-tight text-foreground/90">
-                Sehyun Kim is an architecture student at Kookmin University, Seoul. 
-                Focusing on urban ritual, spatial flow, and adaptive systems, 
-                exploring how architecture can operate as a spatial device to mediate 
-                public interaction through multisensory networks.
+                Sehyun Kim is a fourth-year architecture student at Kookmin University, Seoul —
+                currently on leave. His work operates at the intersection of urban ritual,
+                spatial flow, and adaptive systems, proposing architecture as a mediating device
+                between political fragmentation, ecological coexistence, and collective memory.
               </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4 border-t border-border">
+                {["Urban Ritual", "Spatial Flow", "Adaptive Systems", "Multisensory Architecture", "Public Interaction", "Collective Memory"].map(interest => (
+                  <span key={interest} className="font-sans text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{interest}</span>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -264,8 +282,9 @@ export default function Home() {
                 <ul className="space-y-4">
                   <li className="flex flex-col">
                     <span className="font-medium">Kookmin University</span>
-                    <span className="text-muted-foreground">Department of Architecture</span>
-                    <span className="text-xs text-muted-foreground mt-1">2020 – Present</span>
+                    <span className="text-muted-foreground">Department of Architecture, BArch</span>
+                    <span className="text-muted-foreground">4th Year — Currently on Leave</span>
+                    <span className="text-xs text-muted-foreground mt-1">Mar 2020 – Present</span>
                   </li>
                 </ul>
               </motion.div>
@@ -276,17 +295,27 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Experience</h3>
-                <ul className="space-y-4">
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Awards</h3>
+                <ul className="space-y-5">
                   <li className="flex flex-col">
-                    <span className="font-medium">Architecture Studio Internship</span>
-                    <span className="text-muted-foreground">Seoul, Korea</span>
-                    <span className="text-xs text-muted-foreground mt-1">2024</span>
+                    <span className="font-medium">UAUS Competition</span>
+                    <span className="text-muted-foreground">Excellence Prize (3rd) &amp; Citizen Choice Prize</span>
+                    <span className="text-xs text-muted-foreground mt-1">2025</span>
                   </li>
                   <li className="flex flex-col">
-                    <span className="font-medium">Research Assistant</span>
-                    <span className="text-muted-foreground">Urban Systems Lab</span>
-                    <span className="text-xs text-muted-foreground mt-1">2023 – 2024</span>
+                    <span className="font-medium">Design Excellence Scholarship</span>
+                    <span className="text-muted-foreground">7th &amp; 8th Architecture Studio</span>
+                    <span className="text-xs text-muted-foreground mt-1">2025</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="font-medium">Future Church Contest</span>
+                    <span className="text-muted-foreground">Bronze Prize — Kukmin Ilbo</span>
+                    <span className="text-xs text-muted-foreground mt-1">2023</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="font-medium">Dokdo Guest House Contest</span>
+                    <span className="text-muted-foreground">Award</span>
+                    <span className="text-xs text-muted-foreground mt-1">2020</span>
                   </li>
                 </ul>
               </motion.div>
@@ -297,17 +326,32 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Competitions & Awards</h3>
-                <ul className="space-y-4">
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Experience</h3>
+                <ul className="space-y-5">
                   <li className="flex flex-col">
-                    <span className="font-medium">Architecture Student Competition</span>
-                    <span className="text-muted-foreground">Finalist Entry</span>
-                    <span className="text-xs text-muted-foreground mt-1">2024</span>
+                    <span className="font-medium">UAUS</span>
+                    <span className="text-muted-foreground">Union of Architecture University Students</span>
+                    <span className="text-xs text-muted-foreground mt-1">2025.06 – 2025.10</span>
                   </li>
                   <li className="flex flex-col">
-                    <span className="font-medium">Academic Recognition Award</span>
+                    <span className="font-medium">Rural Architectural Volunteer</span>
+                    <span className="text-muted-foreground">Field Work</span>
+                    <span className="text-xs text-muted-foreground mt-1">2025.06 – 2025.07 &amp; 2024.06 – 2024.07</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="font-medium">Samoonan Church</span>
+                    <span className="text-muted-foreground">Youth Ministry Group Leader</span>
+                    <span className="text-xs text-muted-foreground mt-1">2025.01 – 2025.12</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="font-medium">Architectural Research Society</span>
                     <span className="text-muted-foreground">Kookmin University</span>
-                    <span className="text-xs text-muted-foreground mt-1">2023</span>
+                    <span className="text-xs text-muted-foreground mt-1">2023.03 – 2025.06</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="font-medium">Korea Air Force</span>
+                    <span className="text-muted-foreground">Air Traffic Control (ATC)</span>
+                    <span className="text-xs text-muted-foreground mt-1">2021.02 – 2022.10</span>
                   </li>
                 </ul>
               </motion.div>
@@ -319,13 +363,10 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Software</h3>
-                <ul className="grid grid-cols-2 gap-2 text-muted-foreground">
-                  <li>Rhino</li>
-                  <li>Grasshopper</li>
-                  <li>AutoCAD</li>
-                  <li>Revit</li>
-                  <li>Adobe Suite</li>
-                  <li>Figma</li>
+                <ul className="grid grid-cols-2 gap-y-3 gap-x-4 text-muted-foreground">
+                  {["Rhinoceros 8", "Grasshopper", "SketchUp", "AutoCAD", "Revit", "Enscape", "D5 Render", "Photoshop", "Illustrator", "InDesign", "Excel", "PowerPoint"].map(sw => (
+                    <li key={sw}>{sw}</li>
+                  ))}
                 </ul>
               </motion.div>
             </div>
@@ -343,7 +384,7 @@ export default function Home() {
           className="flex flex-col items-center gap-12 text-center"
         >
           <div className="font-serif text-4xl md:text-6xl tracking-tight hover:italic transition-all cursor-pointer">
-            <a href="mailto:sehyunkim@kookmin.ac.kr">sehyunkim@kookmin.ac.kr</a>
+            <a href="mailto:sehyun20@icloud.com">sehyun20@icloud.com</a>
           </div>
           
           <div className="flex gap-8 text-xs uppercase tracking-[0.2em] font-sans">
