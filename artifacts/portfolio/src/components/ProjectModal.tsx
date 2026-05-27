@@ -66,7 +66,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             className="absolute top-0 right-0 h-full w-full md:w-[65vw] lg:w-[58vw] bg-[#f5f4f0] overflow-y-auto overscroll-contain"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button */}
+            {/* Hero: first PDF page */}
+            {project.pages[0] && (
+              <div className="w-full overflow-hidden bg-white">
+                <motion.img
+                  initial={{ scale: 1.03 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.4, ease: "easeOut" }}
+                  src={project.pages[0]}
+                  alt={project.title}
+                  className="w-full h-auto block"
+                />
+              </div>
+            )}
+
+            {/* Close button — overlaid on top of hero */}
             <button
               onClick={onClose}
               className="sticky top-0 ml-auto flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-sans text-foreground/40 hover:text-foreground transition-colors py-5 px-8 bg-[#f5f4f0]/90 backdrop-blur-sm w-full justify-end z-10"
@@ -74,20 +88,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               Close ✕
             </button>
 
-            {/* Cover image */}
-            <div className="w-full aspect-[16/9] overflow-hidden bg-neutral-200 -mt-[42px]">
-              <motion.img
-                initial={{ scale: 1.04 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.4, ease: "easeOut" }}
-                src={project.img}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
             {/* Title block */}
-            <div className="px-8 md:px-12 pt-10 pb-8 space-y-4 border-b border-black/8">
+            <div className="px-8 md:px-12 pt-6 pb-8 space-y-4 border-b border-black/8">
               <div className="flex items-baseline justify-between">
                 <h2 className="font-serif text-3xl md:text-[2.6rem] tracking-tight leading-tight">{project.title}</h2>
                 <span className="font-sans text-xs text-foreground/35 ml-4 shrink-0">{project.year}</span>
@@ -115,9 +117,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </p>
             </div>
 
-            {/* PDF pages gallery interspersed with concepts */}
+            {/* PDF pages gallery interspersed with concepts (skip page[0] — already shown as hero) */}
             <div className="space-y-0">
-              {project.pages.map((src, i) => {
+              {project.pages.slice(1).map((src, i) => {
                 const concept = project.concepts[i];
                 return (
                   <div key={src}>
@@ -156,27 +158,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 );
               })}
 
-              {/* Remaining pages after all concepts */}
-              {project.pages.slice(project.concepts.length).map((src, i) => {
-                const realIdx = project.concepts.length + i;
-                return !imgError[src] ? (
-                  <motion.div
-                    key={`extra-${src}`}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-60px", root: panelRef }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="w-full bg-white border-t border-b border-black/5"
-                  >
-                    <img
-                      src={src}
-                      alt={`${project.title} — page ${realIdx + 1}`}
-                      className="w-full h-auto block"
-                      onError={() => setImgError(prev => ({ ...prev, [src]: true }))}
-                    />
-                  </motion.div>
-                ) : null;
-              })}
             </div>
 
             {/* Program + keywords */}
