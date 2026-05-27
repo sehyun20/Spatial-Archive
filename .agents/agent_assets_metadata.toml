@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "ZxfMdm-VxA8eQq5JKg6pp"
+uri = "file://artifacts/portfolio/src/assets/projects/context-break-off.png"
+type = "image"
+title = "Inflatable architecture urban context"
+
+[[generated]]
+id = "M9aOsvvjRFbFogy8fFJcC"
+uri = "file://artifacts/portfolio/src/assets/projects/floating-ground.png"
+type = "image"
+title = "Floating school slab landscape"
+
+[[generated]]
+id = "hf-NfWvZG0Y3WIZ7W0BOt"
+uri = "file://artifacts/portfolio/src/assets/projects/museum-moving.png"
+type = "image"
+title = "Museum moving wall systems"
+
+[[generated]]
+id = "7UR6tanvCCirNsJj3I-UW"
+uri = "file://artifacts/portfolio/src/assets/projects/art-path-house.png"
+type = "image"
+title = "Collective housing circulation space"
+
+[[generated]]
+id = "gduYv1gWItYLzKQIv1Fev"
+uri = "file://artifacts/portfolio/src/assets/projects/future-church.png"
+type = "image"
+title = "Religious park gabion walls"
+
+[[generated]]
+id = "J01bZJhHYOiDTOcd9r_hB"
+uri = "file://artifacts/portfolio/src/assets/projects/simbiont.png"
+type = "image"
+title = "Ecological symbiosis pavilion structure"
