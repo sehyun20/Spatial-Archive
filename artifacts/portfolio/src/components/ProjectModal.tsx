@@ -63,7 +63,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-0 right-0 h-full w-full md:w-[65vw] lg:w-[58vw] bg-[#f5f4f0] overflow-y-auto overscroll-contain"
+            className="absolute top-0 right-0 h-full w-full md:w-[65vw] lg:w-[58vw] bg-white overflow-y-auto overscroll-contain"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Hero: first PDF page */}
@@ -83,7 +83,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Close button — overlaid on top of hero */}
             <button
               onClick={onClose}
-              className="sticky top-0 ml-auto flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-sans text-foreground/40 hover:text-foreground transition-colors py-5 px-8 bg-[#f5f4f0]/90 backdrop-blur-sm w-full justify-end z-10"
+              className="sticky top-0 ml-auto flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-sans text-foreground/40 hover:text-foreground transition-colors py-5 px-8 bg-white/90 backdrop-blur-sm w-full justify-end z-10"
             >
               Close ✕
             </button>
