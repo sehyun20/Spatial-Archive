@@ -6,7 +6,7 @@ import contextBreakOff from "@/assets/projects/context-break-off.png";
 import floatingGround from "@/assets/projects/floating-ground.png";
 import museumMoving from "@/assets/projects/museum-moving.png";
 import artPathHouse from "@/assets/projects/art-path-house.png";
-import futureChurch from "@/assets/projects/future-church.png";
+import futureChurch from "@/assets/projects/future-church.jpg";
 import simbiont from "@/assets/projects/simbiont.png";
 
 const works = [
