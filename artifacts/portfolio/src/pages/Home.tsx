@@ -9,6 +9,19 @@ import artPathHouse from "@/assets/projects/art-path-house.png";
 import futureChurch from "@/assets/projects/future-church.jpg";
 import simbiont from "@/assets/projects/simbiont.png";
 
+function sortedPages(glob: Record<string, string>): string[] {
+  return Object.entries(glob)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, v]) => v);
+}
+
+const p1 = sortedPages(import.meta.glob("../assets/projects/01-context-break-off/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>);
+const p2 = sortedPages(import.meta.glob("../assets/projects/02-floating-ground/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>);
+const p3 = sortedPages(import.meta.glob("../assets/projects/03-museum-is-moving/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>);
+const p4 = sortedPages(import.meta.glob("../assets/projects/04-art-path-house/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>);
+const p5 = sortedPages(import.meta.glob("../assets/projects/05-future-church/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>);
+const p6 = sortedPages(import.meta.glob("../assets/projects/06-simbiont/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>);
+
 const works: ProjectDetail[] = [
   {
     title: "Context Break Off",
@@ -18,6 +31,7 @@ const works: ProjectDetail[] = [
     status: "Academic Thesis — Individual",
     instructor: "Park Hee Chan",
     img: contextBreakOff,
+    pages: p1,
     keywords: "ekklesia, membrane structure, inflatable vehicle, protest, ritual, urban dialogue",
     prologue:
       "In the contemporary era, we increasingly encounter a breakdown in dialogue, accompanied by a tendency toward rigid, binary modes of thinking. Individuals often regard their own positions as entirely correct, thereby perceiving differing viewpoints not as alternatives, but as fundamentally 'wrong.' Within this context of political conflict and social fragmentation, an important question arises: what role can religion play?",
@@ -54,6 +68,7 @@ const works: ProjectDetail[] = [
     status: "Academic Study — Individual",
     instructor: "Lee Seung-Tek",
     img: floatingGround,
+    pages: p2,
     keywords: "floating slab, open school, hillside, public circulation, Bukak-dong, community",
     prologue:
       "School is envisioned not just as an educational facility, but as an open and lively environment where students and children can freely run, play, and explore — blurring the boundary between learning and everyday life. Generous open spaces and interconnected pathways encourage spontaneous movement, interaction, and play, allowing the school to function as a shared landscape that supports both education and the everyday rhythms of the neighborhood.",
@@ -85,6 +100,7 @@ const works: ProjectDetail[] = [
     location: "Haehwa-dong, Seoul",
     status: "Academic Study — Individual",
     img: museumMoving,
+    pages: p3,
     keywords: "larchiveum, movable wall, flexible museum, Marronnier Park, archive, cinematic",
     prologue:
       "Due to the nature of Marronnier Park — a large gathering of people drawn to architecture — it is difficult for the general public to understand intangible culture in the form of records such as drawings or texts. The architectural museum should not be limited to archives or model exhibitions, but should be a spatial experience in architecture itself.",
@@ -119,6 +135,7 @@ const works: ProjectDetail[] = [
     status: "Academic Study — Team",
     instructor: "Seongbeom Mo",
     img: artPathHouse,
+    pages: p4,
     keywords: "collective living, artist community, path, Jeongreong-dong, interdisciplinary, circulation",
     prologue:
       "Welcome to the Artist House. An interdisciplinary living environment that fosters both collaboration and autonomy, cultivating creative exchange within a collective residential framework. 100 rooms across three module types — for individual residents, work-life hybrid residents, and collaborative work-life residents.",
@@ -153,6 +170,7 @@ const works: ProjectDetail[] = [
     status: "Contest — Bronze Prize (Team)",
     instructor: "Team Project",
     img: futureChurch,
+    pages: p5,
     keywords: "gabion, adaptive reuse, open sanctuary, memory, community, Bronze Prize",
     prologue:
       "A long-standing church inevitably forms deep ties with its surrounding community. For some, it is a place of worship; for others, a place of support and shared experiences — accumulating layers of memories over time. While the church has long contributed to the community as a religious facility, its sudden disappearance — despite challenges like aging and declining attendance — would be deeply felt.",
@@ -187,6 +205,7 @@ const works: ProjectDetail[] = [
     status: "UAUS — Excellence Prize (3rd) + Citizen Choice Prize (Team)",
     instructor: "Team Project",
     img: simbiont,
+    pages: p6,
     keywords: "symbiosis, bromeliad, micro-ecosystem, water cycle, pavilion, Seoul Square",
     prologue:
       "How does nature coexist? How can humans coexist with nature? In this era, humans tend to see nature only as a 'resource.' However, the pavilion Simbiont models an ecological operation — proposing a space of symbiosis by imitating nature's cyclical systems.",
