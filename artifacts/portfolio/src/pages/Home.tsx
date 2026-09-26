@@ -501,7 +501,7 @@ export default function Home() {
                 <ul className="space-y-5">
                   <li className="flex flex-col">
                     <span className="font-medium">Shigeru Ban Architecture</span>
-                    <span className="text-muted-foreground">Field work</span>
+                    <span className="text-muted-foreground">Internship</span>
                     <span className="text-xs text-muted-foreground mt-1">2026.08 -ing</span>
                   </li>
                   <li className="flex flex-col">
