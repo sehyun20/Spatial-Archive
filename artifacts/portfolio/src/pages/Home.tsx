@@ -9,6 +9,17 @@ import artPathHouse from "@/assets/projects/art-path-house.png";
 import futureChurch from "@/assets/projects/future-church.jpg";
 import simbiont from "@/assets/projects/simbiont.png";
 
+function ScrollToTopButton() {
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="fixed bottom-8 right-8 z-50 text-2xl hover:text-neutral-400 transition-colors"
+      aria-label="Scroll to top"
+    >
+      ↑
+    </button>
+  );
+}
 function sortedPages(glob: Record<string, string>): string[] {
   return Object.entries(glob)
     .sort(([a], [b]) => a.localeCompare(b))
@@ -591,5 +602,6 @@ export default function Home() {
         </motion.div>
       </section>
     </div>
+    <ScrollToTopButton />
   );
 }
