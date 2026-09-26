@@ -3,6 +3,7 @@
   "name": "spatial-archive",
   "compatibility_date": "2026-09-25",
   "assets": {
+    "directory": "./dist/public",
     "not_found_handling": "single-page-application"
   }
 }
