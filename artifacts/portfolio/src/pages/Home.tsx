@@ -500,6 +500,11 @@ export default function Home() {
                 <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Experience</h3>
                 <ul className="space-y-5">
                   <li className="flex flex-col">
+                    <span className="font-medium">Shigeru Ban Architecture</span>
+                    <span className="text-muted-foreground">Field work</span>
+                    <span className="text-xs text-muted-foreground mt-1">2026.08 -ing</span>
+                  </li>
+                  <li className="flex flex-col">
                     <span className="font-medium">UAUS</span>
                     <span className="text-muted-foreground">Union of Architecture University Students</span>
                     <span className="text-xs text-muted-foreground mt-1">2025.06 – 2025.10</span>
