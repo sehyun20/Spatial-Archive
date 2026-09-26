@@ -560,7 +560,7 @@ export default function Home() {
 
           <div className="flex gap-8 text-xs uppercase tracking-[0.2em] font-sans">
             <a
-              href="https://www.instagram.com/lee._.on/"
+              href="https://www.instagram.com/se_hyun20/"
               target="_blank"
               rel="noreferrer"
               className="hover:text-neutral-400 transition-colors"
