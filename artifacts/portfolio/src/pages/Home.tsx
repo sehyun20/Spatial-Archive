@@ -578,8 +578,14 @@ export default function Home() {
             >
               Instagram
             </a>
-            <a href="#" className="hover:text-neutral-400 transition-colors" data-testid="link-pdf">
-              PDF Portfolio
+            <a
+              href="https://www.linkedin.com/in/sehyun-kim-20o0/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-neutral-400 transition-colors"
+              data-testid="link-linkedin"
+            >
+              LinkedIn
             </a>
           </div>
         </motion.div>
