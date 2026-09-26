@@ -469,6 +469,11 @@ export default function Home() {
                 <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-6 border-b border-border pb-2">Awards</h3>
                 <ul className="space-y-5">
                   <li className="flex flex-col">
+                    <span className="font-medium">Gwangju Asia International Competition</span>
+                    <span className="text-muted-foreground">Special Selection</span>
+                    <span className="text-xs text-muted-foreground mt-1">2026</span>
+                  </li>
+                  <li className="flex flex-col">
                     <span className="font-medium">UAUS Competition</span>
                     <span className="text-muted-foreground">Excellence Prize (3rd) &amp; Citizen Choice Prize</span>
                     <span className="text-xs text-muted-foreground mt-1">2025</span>
@@ -485,7 +490,7 @@ export default function Home() {
                   </li>
                   <li className="flex flex-col">
                     <span className="font-medium">Dokdo Guest House Contest</span>
-                    <span className="text-muted-foreground">Award</span>
+                    <span className="text-muted-foreground">Special Selection</span>
                     <span className="text-xs text-muted-foreground mt-1">2020</span>
                   </li>
                 </ul>
